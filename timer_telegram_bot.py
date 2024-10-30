@@ -4,9 +4,6 @@ from dotenv import load
 from pytimeparse import parse
 
 
-load()
-
-
 def choose(author_id):
     answer = "Время вышло!"
     bot.send_message(author_id, answer)
@@ -32,6 +29,7 @@ def reply(chat_id, message):
 
 
 if __name__ == '__main__':
+    load()
     bot = ptbot.Bot(os.getenv("TELEGRAM_TOKEN"))
     bot.reply_on_message(reply)
     bot.run_bot()
